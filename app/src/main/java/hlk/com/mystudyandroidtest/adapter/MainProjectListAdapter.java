@@ -12,6 +12,7 @@ import android.widget.TextView;
 import hlk.com.mystudyandroidtest.R;
 import hlk.com.mystudyandroidtest.base.MyApplication;
 import hlk.com.mystudyandroidtest.ui.RecyclerDemoActivity;
+import hlk.com.mystudyandroidtest.ui.ServiceDemoActivity;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
@@ -24,7 +25,7 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
 
     private String[] main_list = {"RecyclerDemo", "ActivityDemo", "ServiceDemo", "MaiderPlayerDemo", "ActivityManager"
             , "FragmentDemo", "FrescoDemo", "OkHttpDemo", "WebViewDemo", "友盟统计", "多渠道打包", "代码混淆", "EventBus",
-            "otto", "IMDemo","内存优化与监控"};
+            "otto", "IMDemo", "内存优化与监控"};
     private Context mContext = MyApplication.getContext();
 
     @Override
@@ -43,6 +44,11 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
                         Intent intent = new Intent(mContext, RecyclerDemoActivity.class);
                         intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(intent);
+                        break;
+                    case "ServiceDemo":
+                        Intent serviceIntent = new Intent(mContext, ServiceDemoActivity.class);
+                        serviceIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                        mContext.startActivity(serviceIntent);
                         break;
                 }
             }
