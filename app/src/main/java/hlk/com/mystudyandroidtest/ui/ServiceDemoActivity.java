@@ -12,7 +12,7 @@ import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import hlk.com.mystudyandroidtest.MyService;
+import hlk.com.mystudyandroidtest.service.MyService;
 import hlk.com.mystudyandroidtest.R;
 
 /**
