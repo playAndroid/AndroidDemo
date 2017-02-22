@@ -23,18 +23,23 @@
         </activity>
         <activity android:name=".ui.RecyclerDemoActivity" />
         <activity android:name=".ui.RecyclerMoreItemActivity" />
-
+        <activity android:name=".ui.ServiceDemoActivity" />
+        <activity android:name=".ui.customerview.SpeedIndexActivity" />
+        <activity android:name=".ui.CustomerViewActivity" />
+        <activity android:name=".ui.OkHttpDemoActivity" />
+        <!--友盟-->
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="58aaa8945312dd998600184e" />
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="suibianlai" />
-        <activity android:name=".ui.ServiceDemoActivity"/>
+
+
         <service
-            android:name=".MyService"
+            android:name=".service.MyService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>

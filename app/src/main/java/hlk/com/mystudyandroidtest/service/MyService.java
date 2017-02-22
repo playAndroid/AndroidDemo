@@ -1,4 +1,4 @@
-package hlk.com.mystudyandroidtest;
+package hlk.com.mystudyandroidtest.service;
 
 import android.app.Service;
 import android.content.Intent;

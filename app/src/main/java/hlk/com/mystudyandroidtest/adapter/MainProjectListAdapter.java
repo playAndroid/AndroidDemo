@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import hlk.com.mystudyandroidtest.R;
 import hlk.com.mystudyandroidtest.base.MyApplication;
+import hlk.com.mystudyandroidtest.ui.CustomerViewActivity;
+import hlk.com.mystudyandroidtest.ui.OkHttpDemoActivity;
 import hlk.com.mystudyandroidtest.ui.RecyclerDemoActivity;
 import hlk.com.mystudyandroidtest.ui.ServiceDemoActivity;
 
@@ -25,7 +27,7 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
 
     private String[] main_list = {"RecyclerDemo", "ActivityDemo", "ServiceDemo", "MaiderPlayerDemo", "ActivityManager"
             , "FragmentDemo", "FrescoDemo", "OkHttpDemo", "WebViewDemo", "友盟统计", "多渠道打包", "代码混淆", "EventBus",
-            "otto", "IMDemo", "内存优化与监控"};
+            "otto", "IMDemo", "内存优化与监控", "自定义View"};
     private Context mContext = MyApplication.getContext();
 
     @Override
@@ -35,11 +37,12 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
     }
 
     @Override
-    public void onBindViewHolder(MainProjectListAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(MainProjectListAdapter.ViewHolder holder, int position) {
+        final String str = main_list[position];
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (main_list[position]) {
+                switch (str) {
                     case "RecyclerDemo":
                         Intent intent = new Intent(mContext, RecyclerDemoActivity.class);
                         intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
@@ -49,6 +52,16 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
                         Intent serviceIntent = new Intent(mContext, ServiceDemoActivity.class);
                         serviceIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(serviceIntent);
+                        break;
+                    case "自定义View":
+                        Intent customerIntent = new Intent(mContext,CustomerViewActivity.class);
+                        customerIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                        mContext.startActivity(customerIntent);
+                        break;
+                    case "OkHttpDemo":
+                        Intent okHttpDemoIntent = new Intent(mContext,OkHttpDemoActivity.class);
+                        okHttpDemoIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                        mContext.startActivity(okHttpDemoIntent);
                         break;
                 }
             }
