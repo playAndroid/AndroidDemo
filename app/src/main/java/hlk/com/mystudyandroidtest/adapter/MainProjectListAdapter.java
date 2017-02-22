@@ -12,6 +12,7 @@ import android.widget.TextView;
 import hlk.com.mystudyandroidtest.R;
 import hlk.com.mystudyandroidtest.base.MyApplication;
 import hlk.com.mystudyandroidtest.ui.CustomerViewActivity;
+import hlk.com.mystudyandroidtest.ui.OkHttpDemoActivity;
 import hlk.com.mystudyandroidtest.ui.RecyclerDemoActivity;
 import hlk.com.mystudyandroidtest.ui.ServiceDemoActivity;
 
@@ -56,6 +57,11 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
                         Intent customerIntent = new Intent(mContext,CustomerViewActivity.class);
                         customerIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(customerIntent);
+                        break;
+                    case "OkHttpDemo":
+                        Intent okHttpDemoIntent = new Intent(mContext,OkHttpDemoActivity.class);
+                        okHttpDemoIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                        mContext.startActivity(okHttpDemoIntent);
                         break;
                 }
             }

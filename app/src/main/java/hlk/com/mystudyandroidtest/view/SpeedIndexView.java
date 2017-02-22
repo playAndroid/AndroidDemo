@@ -105,8 +105,8 @@ public class SpeedIndexView extends View {
         float y = event.getY();
         int index = (int) (y / letterLength);
         Log.d("view", "" + index);
+        //与上次触摸不同
         if (lastIndex != index) {
-            //与上次触摸不同
             if (index >= 0 && index < letters.length) {
                 if (onIndexListener != null)
                     onIndexListener.onTouchindexListener(letters[index]);
