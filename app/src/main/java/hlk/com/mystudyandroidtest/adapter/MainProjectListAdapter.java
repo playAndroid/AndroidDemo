@@ -2,6 +2,7 @@ package hlk.com.mystudyandroidtest.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import hlk.com.mystudyandroidtest.R;
 import hlk.com.mystudyandroidtest.base.MyApplication;
+import hlk.com.mystudyandroidtest.ui.BroadcastDemoActivity;
 import hlk.com.mystudyandroidtest.ui.CustomerViewActivity;
 import hlk.com.mystudyandroidtest.ui.OkHttpDemoActivity;
 import hlk.com.mystudyandroidtest.ui.RecyclerDemoActivity;
@@ -25,7 +27,7 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectListAdapter.ViewHolder> {
 
-    private String[] main_list = {"RecyclerDemo", "ActivityDemo", "ServiceDemo", "MaiderPlayerDemo", "ActivityManager"
+    private String[] main_list = {"RecyclerDemo", "ActivityDemo", "ServiceDemo", "Broadcast", "MaiderPlayerDemo", "ActivityManager"
             , "FragmentDemo", "FrescoDemo", "OkHttpDemo", "WebViewDemo", "友盟统计", "多渠道打包", "代码混淆", "EventBus",
             "otto", "IMDemo", "内存优化与监控", "自定义View"};
     private Context mContext = MyApplication.getContext();
@@ -54,14 +56,19 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
                         mContext.startActivity(serviceIntent);
                         break;
                     case "自定义View":
-                        Intent customerIntent = new Intent(mContext,CustomerViewActivity.class);
+                        Intent customerIntent = new Intent(mContext, CustomerViewActivity.class);
                         customerIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(customerIntent);
                         break;
                     case "OkHttpDemo":
-                        Intent okHttpDemoIntent = new Intent(mContext,OkHttpDemoActivity.class);
+                        Intent okHttpDemoIntent = new Intent(mContext, OkHttpDemoActivity.class);
                         okHttpDemoIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(okHttpDemoIntent);
+                        break;
+                    case "Broadcast":
+                        Intent broadIntent = new Intent(mContext, BroadcastDemoActivity.class);
+                        broadIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                        mContext.startActivity(broadIntent);
                         break;
                 }
             }
