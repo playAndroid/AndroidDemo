@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import hlk.com.mystudyandroidtest.service.MyIntentService;
 import hlk.com.mystudyandroidtest.service.MyService;
 import hlk.com.mystudyandroidtest.R;
 
@@ -29,6 +31,8 @@ public class ServiceDemoActivity extends AppCompatActivity implements View.OnCli
     Button unbind;
     @BindView(R.id.bind)
     Button bind;
+    @BindView(R.id.start_intent_service)
+    Button intentService;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +47,7 @@ public class ServiceDemoActivity extends AppCompatActivity implements View.OnCli
         stop.setOnClickListener(this);
         bind.setOnClickListener(this);
         unbind.setOnClickListener(this);
+        intentService.setOnClickListener(this);
     }
 
     @Override
@@ -59,6 +64,11 @@ public class ServiceDemoActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.unbind:
                 unbindService(connection);
+                break;
+            case R.id.start_intent_service:
+                Log.d("myintentservice", "onClick: "+Thread.currentThread().getId());
+                Intent intent = new Intent(this, MyIntentService.class);
+                startService(intent);
                 break;
         }
     }
