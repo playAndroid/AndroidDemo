@@ -28,4 +28,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="解绑服务" />
+    <Button
+        android:id="@+id/start_intent_service"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="开启Intent服务" />
 </LinearLayout>
