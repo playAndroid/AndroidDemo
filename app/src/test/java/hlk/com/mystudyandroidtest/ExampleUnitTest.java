@@ -2,7 +2,7 @@ package hlk.com.mystudyandroidtest;
 
 import org.junit.Test;
 
-import hlk.com.mystudyandroidtest.net.HttpUtils;
+import hlk.com.mystudyandroidtest.net.okhttptest.HttpUtils;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

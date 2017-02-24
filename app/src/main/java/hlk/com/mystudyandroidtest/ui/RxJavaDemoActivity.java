@@ -4,7 +4,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import hlk.com.mystudyandroidtest.R;
+import hlk.com.mystudyandroidtest.utils.LogUtil;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
@@ -24,7 +24,9 @@ import rx.schedulers.Schedulers;
 
 /**
  * 被观察者  - 观察者 - 订阅 - 事件
- * Created by user on 2017/2/23.
+ * Created by hlk on 2017/2/23.
+ * 学习文章
+ * http://gank.io/post/560e15be2dca930e00da1083
  */
 
 public class RxJavaDemoActivity extends AppCompatActivity {
@@ -69,7 +71,7 @@ public class RxJavaDemoActivity extends AppCompatActivity {
 
             @Override
             public void onNext(String s) {
-                Log.d("rxjava", "onError+连续调用" + s);
+                LogUtil.d("rxjava", "onNext+连续调用" + s);
             }
         });
 
@@ -82,17 +84,17 @@ public class RxJavaDemoActivity extends AppCompatActivity {
         Observer<String> observer = new Observer<String>() {
             @Override
             public void onCompleted() {
-                Log.d("rxjava", "onCompleted");
+                LogUtil.d("rxjava", "onCompleted");
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d("rxjava", "onError");
+                LogUtil.d("rxjava", "onError");
             }
 
             @Override
             public void onNext(String s) {
-                Log.d("rxjava", "onNext:" + s);
+                LogUtil.d("rxjava", "onNext:" + s);
             }
         };
     }
@@ -102,24 +104,24 @@ public class RxJavaDemoActivity extends AppCompatActivity {
         subscriber = new Subscriber<String>() {
             @Override
             public void onCompleted() {
-                Log.d("rxjava", "subscriber---onCompleted");
+                LogUtil.d("rxjava", "subscriber---onCompleted");
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d("rxjava", "subscriber---onError");
+                LogUtil.d("rxjava", "subscriber---onError");
             }
 
             @Override
             public void onNext(String s) {
-                Log.d("rxjava", "subscriber---onNext:" + s);
+                LogUtil.d("rxjava", "subscriber---onNext:" + s);
             }
 
             @Override
             public void onStart() {
                 super.onStart();
                 //observer 扩展类 增加start方法 可用于 在执行之前做准备工作
-                Log.d("rxjava", "subscriber---onStart");
+                LogUtil.d("rxjava", "subscriber---onStart");
             }
 
         };
@@ -159,7 +161,7 @@ public class RxJavaDemoActivity extends AppCompatActivity {
             // onNext()
             @Override
             public void call(String s) {
-                Log.d("rxjava", s);
+                LogUtil.d("rxjava", s);
             }
         };
         Action1<Throwable> onErrorAction = new Action1<Throwable>() {
@@ -173,7 +175,7 @@ public class RxJavaDemoActivity extends AppCompatActivity {
             // onCompleted()
             @Override
             public void call() {
-                Log.d("rxjava", "completed");
+                LogUtil.d("rxjava", "completed");
             }
         };
 
@@ -195,7 +197,7 @@ public class RxJavaDemoActivity extends AppCompatActivity {
                 .subscribe(new Action1<Integer>() {
                     @Override
                     public void call(Integer number) {
-                        Log.d("rxjava", "call" + number);
+                        LogUtil.d("rxjava", "call" + number);
                     }
                 });
     }
@@ -236,10 +238,10 @@ public class RxJavaDemoActivity extends AppCompatActivity {
             @Override
             public void onNext(Student student) {
 
-                Log.d("rxjava", "onNext: " + student.getName());
+                LogUtil.d("rxjava", "onNext: " + student.getName());
                 ArrayList<Course> list = student.getList();
                 for (int i = 0; i < list.size(); i++) {
-                    Log.d("rxjava", "onNext: " + list.get(i).courseName);
+                    LogUtil.d("rxjava", "onNext: " + list.get(i).courseName);
                 }
             }
         };
@@ -262,7 +264,7 @@ public class RxJavaDemoActivity extends AppCompatActivity {
 
             @Override
             public void onNext(Course course) {
-                Log.d(TAG, "onNext: " + course.courseName);
+                LogUtil.d(TAG, "onNext: " + course.courseName);
             }
         };
 

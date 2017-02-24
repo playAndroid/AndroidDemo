@@ -15,6 +15,7 @@ import hlk.com.mystudyandroidtest.ui.BroadcastDemoActivity;
 import hlk.com.mystudyandroidtest.ui.CustomerViewActivity;
 import hlk.com.mystudyandroidtest.ui.OkHttpDemoActivity;
 import hlk.com.mystudyandroidtest.ui.RecyclerDemoActivity;
+import hlk.com.mystudyandroidtest.ui.RetrofitDemoActivity;
 import hlk.com.mystudyandroidtest.ui.RxJavaDemoActivity;
 import hlk.com.mystudyandroidtest.ui.ServiceDemoActivity;
 
@@ -27,7 +28,7 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectListAdapter.ViewHolder> {
 
-    private String[] main_list = {"RxJavaDemo", "RecyclerDemo", "ActivityDemo", "ServiceDemo", "Broadcast", "MaiderPlayerDemo", "ActivityManager"
+    private String[] main_list = {"RxJavaDemo", "RetrofitDemo", "RecyclerDemo", "ActivityDemo", "ServiceDemo", "Broadcast", "MaiderPlayerDemo", "ActivityManager"
             , "FragmentDemo", "FrescoDemo", "OkHttpDemo", "WebViewDemo", "友盟统计", "多渠道打包", "代码混淆", "EventBus",
             "otto", "IMDemo", "内存优化与监控", "自定义View"};
     private Context mContext = MyApplication.getContext();
@@ -74,6 +75,11 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
                         Intent rxIntent = new Intent(mContext, RxJavaDemoActivity.class);
                         rxIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(rxIntent);
+                        break;
+                    case "RetrofitDemo":
+                        Intent retroIntent = new Intent(mContext, RetrofitDemoActivity.class);
+                        retroIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                        mContext.startActivity(retroIntent);
                         break;
                 }
             }

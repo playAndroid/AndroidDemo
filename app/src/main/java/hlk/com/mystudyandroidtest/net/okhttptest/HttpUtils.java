@@ -1,7 +1,6 @@
-package hlk.com.mystudyandroidtest.net;
+package hlk.com.mystudyandroidtest.net.okhttptest;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +9,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import hlk.com.mystudyandroidtest.base.MyApplication;
+import hlk.com.mystudyandroidtest.utils.LogUtil;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -52,10 +52,10 @@ public class HttpUtils {
         Response response = call.execute();
         if (response.isSuccessful()) {
             String str = response.body().toString();
-            Log.d("http", "请求成功" + str);
+            LogUtil.d("http", "请求成功" + str);
         } else {
             //请求失败
-            Log.d("http", "请求失败");
+            LogUtil.d("http", "请求失败");
         }
 
     }
@@ -85,11 +85,11 @@ public class HttpUtils {
                 if (null != response.cacheResponse()) {
                     //如果有缓存 从缓存中取数据
                     String str = response.cacheResponse().toString();
-                    Log.d("http", "请求成功,缓存" + str);
+                    LogUtil.d("http", "请求成功,缓存" + str);
                     System.out.print("请求成功,缓存123" + str);
                 } else {
                     String str = response.body().toString();
-                    Log.d("http", "请求成功,未缓存" + str);
+                    LogUtil.d("http", "请求成功,未缓存" + str);
                     System.out.print("请求成功,未缓存123" + str);
                 }
 
@@ -119,13 +119,13 @@ public class HttpUtils {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.d("http", "IOException" + e.getMessage());
+                LogUtil.d("http", "IOException" + e.getMessage());
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String s = response.body().toString();
-                Log.d("http", "s" + s);
+                LogUtil.d("http", "s" + s);
             }
         });
     }
@@ -158,7 +158,7 @@ public class HttpUtils {
                     String s = response.body().string();
 
                 } catch (IOException e) {
-                    Log.d("http", "IOException");
+                    LogUtil.d("http", "IOException");
                 }
             }
         });

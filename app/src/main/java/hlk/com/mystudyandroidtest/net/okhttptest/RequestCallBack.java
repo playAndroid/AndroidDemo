@@ -1,4 +1,4 @@
-package hlk.com.mystudyandroidtest.net;
+package hlk.com.mystudyandroidtest.net.okhttptest;
 
 import okhttp3.Call;
 import okhttp3.Response;
