@@ -29,14 +29,11 @@
         <activity android:name=".ui.CustomerViewActivity" />
         <activity android:name=".ui.OkHttpDemoActivity" />
         <activity android:name=".ui.BroadcastDemoActivity" />
-<<<<<<< HEAD
-        <activity android:name=".ui.RxJavaDemoActivity"/>
-        <activity android:name=".ui.RetrofitDemoActivity"/>
-        <!--友盟-->
-=======
         <activity android:name=".ui.RxJavaDemoActivity" />
-        <!-- 友盟 -->
->>>>>>> 743e0e4569826589feb26b3291808cb1d8d88c39
+        <activity android:name=".ui.RetrofitDemoActivity" />
+
+        <activity android:name=".ui.RxJavaAndRetrofitDemoActivity" />
+        <!--友盟-->
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="58aaa8945312dd998600184e" />
@@ -48,7 +45,8 @@
             android:name=".service.MyService"
             android:enabled="true"
             android:exported="true" />
-        <service android:name=".service.MyIntentService"/>
+        <service android:name=".service.MyIntentService" />
+
         <receiver android:name=".broadcast.MyBroadcastReceiver">
 
             <!-- priority 广播优先级 -->

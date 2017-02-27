@@ -16,7 +16,6 @@ import hlk.com.mystudyandroidtest.utils.LogUtil;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 import rx.functions.Action1;
 import rx.functions.Func1;
@@ -193,7 +192,7 @@ public class RxJavaDemoActivity extends AppCompatActivity {
     private void asyObserver() {
         Observable.just(1, 2, 3, 4)
                 .subscribeOn(Schedulers.io())//IO线程执行   指定的是 订阅(subscribe)此被观察者(Observable)的订阅者(subscribe)
-                .observeOn(AndroidSchedulers.mainThread())//主线程执行   指定的是Observable中的Observer的线程
+//                .observeOn(AndroidSchedulers.mainThread())//主线程执行   指定的是Observable中的Observer的线程
                 .subscribe(new Action1<Integer>() {
                     @Override
                     public void call(Integer number) {
