@@ -13,6 +13,7 @@ import hlk.com.mystudyandroidtest.R;
 import hlk.com.mystudyandroidtest.base.MyApplication;
 import hlk.com.mystudyandroidtest.ui.BroadcastDemoActivity;
 import hlk.com.mystudyandroidtest.ui.CustomerViewActivity;
+import hlk.com.mystudyandroidtest.ui.MediaPlayerDemoActivity;
 import hlk.com.mystudyandroidtest.ui.OkHttpDemoActivity;
 import hlk.com.mystudyandroidtest.ui.RecyclerDemoActivity;
 import hlk.com.mystudyandroidtest.ui.RetrofitDemoActivity;
@@ -29,7 +30,8 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectListAdapter.ViewHolder> {
 
-    private String[] main_list = {"RxJavaDemo", "RetrofitDemo", "RxJava&RetrofitDemo","RecyclerDemo", "ActivityDemo", "ServiceDemo", "Broadcast", "MaiderPlayerDemo", "ActivityManager"
+    private String[] main_list = {"RxJavaDemo", "RetrofitDemo", "RxJava&RetrofitDemo", "RecyclerDemo", "ActivityDemo"
+            , "ServiceDemo", "Broadcast", "MediaPlayerDemo", "ActivityManager"
             , "FragmentDemo", "FrescoDemo", "OkHttpDemo", "WebViewDemo", "友盟统计", "多渠道打包", "代码混淆", "EventBus",
             "otto", "IMDemo", "内存优化与监控", "自定义View"};
     private Context mContext = MyApplication.getContext();
@@ -48,50 +50,43 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
             public void onClick(View v) {
                 switch (str) {
                     case "RecyclerDemo":
-                        Intent intent = new Intent(mContext, RecyclerDemoActivity.class);
-                        intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(intent);
+                        jumpIntentActivity(RecyclerDemoActivity.class);
                         break;
                     case "ServiceDemo":
-                        Intent serviceIntent = new Intent(mContext, ServiceDemoActivity.class);
-                        serviceIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(serviceIntent);
+                        jumpIntentActivity(ServiceDemoActivity.class);
                         break;
                     case "自定义View":
-                        Intent customerIntent = new Intent(mContext, CustomerViewActivity.class);
-                        customerIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(customerIntent);
+                        jumpIntentActivity(CustomerViewActivity.class);
                         break;
                     case "OkHttpDemo":
-                        Intent okHttpDemoIntent = new Intent(mContext, OkHttpDemoActivity.class);
-                        okHttpDemoIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(okHttpDemoIntent);
+                        jumpIntentActivity(OkHttpDemoActivity.class);
                         break;
                     case "Broadcast":
-                        Intent broadIntent = new Intent(mContext, BroadcastDemoActivity.class);
-                        broadIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(broadIntent);
+                        jumpIntentActivity(BroadcastDemoActivity.class);
                         break;
                     case "RxJavaDemo":
-                        Intent rxIntent = new Intent(mContext, RxJavaDemoActivity.class);
-                        rxIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(rxIntent);
+                        jumpIntentActivity(RxJavaDemoActivity.class);
                         break;
                     case "RetrofitDemo":
-                        Intent retroIntent = new Intent(mContext, RetrofitDemoActivity.class);
-                        retroIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(retroIntent);
+                        jumpIntentActivity(RetrofitDemoActivity.class);
                         break;
                     case "RxJava&RetrofitDemo":
-                        Intent rxRetroIntent = new Intent(mContext, RxJavaAndRetrofitDemoActivity.class);
-                        rxRetroIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(rxRetroIntent);
+                        jumpIntentActivity(RxJavaAndRetrofitDemoActivity.class);
+                        break;
+                    case "MediaPlayerDemo":
+                        jumpIntentActivity(MediaPlayerDemoActivity.class);
                         break;
                 }
             }
         });
 
         holder.item_title.setText(main_list[position]);
+    }
+
+    private void jumpIntentActivity(Class aClass) {
+        Intent intent = new Intent(mContext, aClass);
+        intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+        mContext.startActivity(intent);
     }
 
     @Override
