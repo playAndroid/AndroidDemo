@@ -19,6 +19,8 @@ import hlk.com.mystudyandroidtest.ui.customerview.SpeedIndexActivity;
 public class CustomerViewActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.btn_speed_index)
     Button speedIndex;
+    @BindView(R.id.btn_collapsing)
+    Button btn_collapsing;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class CustomerViewActivity extends AppCompatActivity implements View.OnCl
 
     private void registerListener() {
         speedIndex.setOnClickListener(this);
+        btn_collapsing.setOnClickListener(this);
     }
 
 
@@ -39,6 +42,10 @@ public class CustomerViewActivity extends AppCompatActivity implements View.OnCl
             case R.id.btn_speed_index:
                 Intent intent = new Intent(this, SpeedIndexActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_collapsing:
+                Intent intent1 = new Intent(this,CallaperingDemoActivity.class);
+                startActivity(intent1);
                 break;
         }
     }
