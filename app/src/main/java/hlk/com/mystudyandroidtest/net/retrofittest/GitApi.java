@@ -12,5 +12,5 @@ import retrofit.http.Path;
 
 public interface GitApi {
     @GET("/users/{user}")
-    public void getString(@Path("user") String path, Callback<Gitmodel> callback);
+     void getString(@Path("user") String path, Callback<Gitmodel> callback);
 }

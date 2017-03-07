@@ -34,13 +34,13 @@ public class RecyclerDemoAdapter extends RecyclerView.Adapter<RecyclerDemoAdapte
     }
 
     @Override
-    public void onBindViewHolder(RecyclerDemoAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final RecyclerDemoAdapter.ViewHolder holder,int position) {
         holder.item_title.setText(recyclerData[position]);
         holder.item_title.setTextColor(colors[getRadomNumber()]);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (recyclerData[position]) {
+                switch (recyclerData[holder.getAdapterPosition()]) {
                     case "Recycler more Item":
                         Intent intent = new Intent(mContext, RecyclerMoreItemActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

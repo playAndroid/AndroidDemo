@@ -8,9 +8,11 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name = "android.permission.CAMERA" />
-    <uses-feature android:name = "android.hardware.camera" />
-    <uses-feature android:name = "android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:name=".base.MyApplication"
         android:allowBackup="true"
@@ -38,10 +40,13 @@
         <activity android:name=".ui.RxJavaAndRetrofitDemoActivity" />
         <activity android:name=".ui.mediaplayer.MusicDemoActivity" />
         <activity android:name=".ui.mediaplayer.MediaImageDemoActivity" />
-        <activity android:name=".ui.mediaplayer.MediaPhotoAlbumDemoActivity"/>
-        <activity android:name=".ui.mediaplayer.CameraDemoActivity"/>
-        <activity android:name=".ui.mediaplayer.PhotoProcessDemoActivity"/>
-
+        <activity android:name=".ui.mediaplayer.MediaPhotoAlbumDemoActivity" />
+        <activity android:name=".ui.mediaplayer.CameraDemoActivity" />
+        <activity android:name=".ui.mediaplayer.PhotoProcessDemoActivity" />
+        <activity android:name=".ui.mediaplayer.AudioDemoActivity"/>
+        <activity
+            android:name=".ui.CallaperingDemoActivity"
+            android:theme="@style/colling" />
         <!--友盟-->
         <meta-data
             android:name="UMENG_APPKEY"

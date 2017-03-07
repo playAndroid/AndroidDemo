@@ -10,6 +10,7 @@ import com.umeng.analytics.MobclickAgent;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import hlk.com.mystudyandroidtest.adapter.MainProjectListAdapter;
+import hlk.com.mystudyandroidtest.utils.LogUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,22 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initView();
-//        Array array = Array.newInstance();
-//        Collections.synchronizedList(new LinkedList(null));
-//        Hashtable hashtable = new Hashtable();
-//        HashMap hashMap = new HashMap();
-////        hashMap.get()
-//        ArrayList arrayList= new ArrayList();
-//        Collection coll = new ArrayList();
-//        Iterator iterator = coll.iterator();
-//        while (iterator.hasNext()){
-//            Object next = iterator.next();
-//        }
-//
-//        ArrayList list = (ArrayList) Collections.synchronizedList(arrayList);
-//        ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-//        int memoryClass = manager.getMemoryClass();
-//        Log.e("内存",":"+memoryClass);
+        ClassLoader classLoader = getClassLoader();
+        if (classLoader != null) {
+            LogUtil.d("classLoader", "classLoader" + classLoader.toString());
+            while (classLoader.getParent() != null) {
+                classLoader = classLoader.getParent();
+                LogUtil.d("classLoader", "[onCreate] classLoader " + " : " + classLoader.toString());
+            }
+        }
     }
 
     private void initView() {

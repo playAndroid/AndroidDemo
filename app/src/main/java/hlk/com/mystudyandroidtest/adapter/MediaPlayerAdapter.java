@@ -10,12 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import hlk.com.mystudyandroidtest.R;
+import hlk.com.mystudyandroidtest.base.MediaPlayerFactory;
 import hlk.com.mystudyandroidtest.base.MyApplication;
-import hlk.com.mystudyandroidtest.ui.mediaplayer.CameraDemoActivity;
-import hlk.com.mystudyandroidtest.ui.mediaplayer.MediaImageDemoActivity;
-import hlk.com.mystudyandroidtest.ui.mediaplayer.MediaPhotoAlbumDemoActivity;
-import hlk.com.mystudyandroidtest.ui.mediaplayer.MusicDemoActivity;
-import hlk.com.mystudyandroidtest.ui.mediaplayer.PhotoProcessDemoActivity;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
@@ -25,7 +21,7 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
  */
 
 public class MediaPlayerAdapter extends RecyclerView.Adapter<MediaPlayerAdapter.ViewHolder> {
-    private String[] main_list = {"Image", "音乐播放", "ImageAlbum", "自定义Camera", "PhotoProcess"};
+    private String[] main_list = {"Image", "音乐播放", "ImageAlbum", "自定义Camera", "PhotoProcess", "系统Music播放音乐"};
     private Context mContext = MyApplication.getContext();
 
     @Override
@@ -35,27 +31,12 @@ public class MediaPlayerAdapter extends RecyclerView.Adapter<MediaPlayerAdapter.
     }
 
     @Override
-    public void onBindViewHolder(MediaPlayerAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(MediaPlayerAdapter.ViewHolder holder, int position) {
+        final int select = position;
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (position) {
-                    case 0:
-                        jumpIntentActivity(MediaImageDemoActivity.class);
-                        break;
-                    case 1:
-                        jumpIntentActivity(MusicDemoActivity.class);
-                        break;
-                    case 2:
-                        jumpIntentActivity(MediaPhotoAlbumDemoActivity.class);
-                        break;
-                    case 3:
-                        jumpIntentActivity(CameraDemoActivity.class);
-                        break;
-                    case 4:
-                        jumpIntentActivity(PhotoProcessDemoActivity.class);
-                        break;
-                }
+                jumpIntentActivity(MediaPlayerFactory.createMediaPlayerDemo(select));
             }
         });
 
