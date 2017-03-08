@@ -43,7 +43,9 @@
         <activity android:name=".ui.mediaplayer.MediaPhotoAlbumDemoActivity" />
         <activity android:name=".ui.mediaplayer.CameraDemoActivity" />
         <activity android:name=".ui.mediaplayer.PhotoProcessDemoActivity" />
-        <activity android:name=".ui.mediaplayer.AudioDemoActivity"/>
+        <activity android:name=".ui.mediaplayer.AudioDemoActivity" />
+        <activity android:name=".ui.mvpdemo.view.MVPDemoActivity" />
+        <activity android:name=".ui.mvpdemo.view.MainSuccessActivity" />
         <activity
             android:name=".ui.CallaperingDemoActivity"
             android:theme="@style/colling" />

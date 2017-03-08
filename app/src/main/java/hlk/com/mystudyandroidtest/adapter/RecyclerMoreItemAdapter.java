@@ -85,7 +85,7 @@ public class RecyclerMoreItemAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
 
-    class ViewHolder1 extends RecyclerView.ViewHolder {
+    private class ViewHolder1 extends RecyclerView.ViewHolder {
 
         private TextView title;
 
@@ -97,7 +97,7 @@ public class RecyclerMoreItemAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     }
 
-    class ViewHolder2 extends RecyclerView.ViewHolder {
+    private class ViewHolder2 extends RecyclerView.ViewHolder {
 
         private TextView title;
 
@@ -109,7 +109,7 @@ public class RecyclerMoreItemAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     }
 
-    class ViewHolder3 extends RecyclerView.ViewHolder {
+    private class ViewHolder3 extends RecyclerView.ViewHolder {
 
         private TextView title;
 
@@ -121,7 +121,7 @@ public class RecyclerMoreItemAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     }
 
-    class ViewHolder4 extends RecyclerView.ViewHolder {
+    private class ViewHolder4 extends RecyclerView.ViewHolder {
 
         private TextView title;
 
@@ -142,16 +142,6 @@ public class RecyclerMoreItemAdapter extends RecyclerView.Adapter<RecyclerView.V
             MoreItemInfo itemInfo = new MoreItemInfo();
             int anInt = random.nextInt(4);
             itemInfo.setType(anInt + 1);
-//            if (i <= 10) {
-//                itemInfo.setType(1);
-//            } else if (10 < i && i <= 20) {
-//                itemInfo.setType(2);
-//            } else if (20 < i && i <= 30) {
-//                itemInfo.setType(3);
-//            } else {
-//                itemInfo.setType(4);
-//            }
-
             itemInfos.add(itemInfo);
         }
         return itemInfos;

@@ -10,16 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import hlk.com.mystudyandroidtest.R;
+import hlk.com.mystudyandroidtest.base.MainProjectFactory;
 import hlk.com.mystudyandroidtest.base.MyApplication;
-import hlk.com.mystudyandroidtest.ui.BroadcastDemoActivity;
-import hlk.com.mystudyandroidtest.ui.CustomerViewActivity;
-import hlk.com.mystudyandroidtest.ui.MediaPlayerDemoActivity;
-import hlk.com.mystudyandroidtest.ui.OkHttpDemoActivity;
-import hlk.com.mystudyandroidtest.ui.RecyclerDemoActivity;
-import hlk.com.mystudyandroidtest.ui.RetrofitDemoActivity;
-import hlk.com.mystudyandroidtest.ui.RxJavaAndRetrofitDemoActivity;
-import hlk.com.mystudyandroidtest.ui.RxJavaDemoActivity;
-import hlk.com.mystudyandroidtest.ui.ServiceDemoActivity;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
@@ -33,7 +25,7 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
     private String[] main_list = {"RxJavaDemo", "RetrofitDemo", "RxJava&RetrofitDemo", "RecyclerDemo", "ActivityDemo"
             , "ServiceDemo", "Broadcast", "MediaPlayerDemo", "ActivityManager"
             , "FragmentDemo", "FrescoDemo", "OkHttpDemo", "WebViewDemo", "友盟统计", "多渠道打包", "代码混淆", "EventBus",
-            "otto", "IMDemo", "内存优化与监控", "自定义View"};
+            "otto", "IMDemo", "内存优化与监控", "自定义View","MVP"};
     private Context mContext = MyApplication.getContext();
 
     @Override
@@ -44,39 +36,11 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
 
     @Override
     public void onBindViewHolder(MainProjectListAdapter.ViewHolder holder, int position) {
-        final String str = main_list[position];
+        final int select = position;
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (str) {
-                    case "RecyclerDemo":
-                        jumpIntentActivity(RecyclerDemoActivity.class);
-                        break;
-                    case "ServiceDemo":
-                        jumpIntentActivity(ServiceDemoActivity.class);
-                        break;
-                    case "自定义View":
-                        jumpIntentActivity(CustomerViewActivity.class);
-                        break;
-                    case "OkHttpDemo":
-                        jumpIntentActivity(OkHttpDemoActivity.class);
-                        break;
-                    case "Broadcast":
-                        jumpIntentActivity(BroadcastDemoActivity.class);
-                        break;
-                    case "RxJavaDemo":
-                        jumpIntentActivity(RxJavaDemoActivity.class);
-                        break;
-                    case "RetrofitDemo":
-                        jumpIntentActivity(RetrofitDemoActivity.class);
-                        break;
-                    case "RxJava&RetrofitDemo":
-                        jumpIntentActivity(RxJavaAndRetrofitDemoActivity.class);
-                        break;
-                    case "MediaPlayerDemo":
-                        jumpIntentActivity(MediaPlayerDemoActivity.class);
-                        break;
-                }
+                jumpIntentActivity(MainProjectFactory.createMainProject(main_list[select]));
             }
         });
 
@@ -84,9 +48,11 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
     }
 
     private void jumpIntentActivity(Class aClass) {
-        Intent intent = new Intent(mContext, aClass);
-        intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
-        mContext.startActivity(intent);
+        if (aClass != null) {
+            Intent intent = new Intent(mContext, aClass);
+            intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+            mContext.startActivity(intent);
+        }
     }
 
     @Override
