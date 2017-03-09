@@ -27,27 +27,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.RecyclerDemoActivity" />
-        <activity android:name=".ui.RecyclerMoreItemActivity" />
-        <activity android:name=".ui.ServiceDemoActivity" />
+        <activity android:name=".ui.recycler.RecyclerDemoActivity" />
+        <activity android:name=".ui.recycler.RecyclerMoreItemActivity" />
+        <activity android:name=".ui.service.ServiceDemoActivity" />
         <activity android:name=".ui.customerview.SpeedIndexActivity" />
-        <activity android:name=".ui.CustomerViewActivity" />
-        <activity android:name=".ui.OkHttpDemoActivity" />
-        <activity android:name=".ui.BroadcastDemoActivity" />
-        <activity android:name=".ui.RxJavaDemoActivity" />
-        <activity android:name=".ui.RetrofitDemoActivity" />
-        <activity android:name=".ui.MediaPlayerDemoActivity" />
-        <activity android:name=".ui.RxJavaAndRetrofitDemoActivity" />
+        <activity android:name=".ui.uiview.CustomerViewActivity" />
+        <activity android:name=".ui.okhttp.OkHttpDemoActivity" />
+        <activity android:name=".ui.brodcast.BroadcastDemoActivity" />
+        <activity android:name=".ui.rxjava.RxJavaDemoActivity" />
+        <activity android:name=".ui.retrofit.RetrofitDemoActivity" />
+        <activity android:name=".ui.mediaplayer.MediaPlayerDemoActivity" />
+        <activity android:name=".ui.rxjava.RxJavaAndRetrofitDemoActivity" />
         <activity android:name=".ui.mediaplayer.MusicDemoActivity" />
         <activity android:name=".ui.mediaplayer.MediaImageDemoActivity" />
         <activity android:name=".ui.mediaplayer.MediaPhotoAlbumDemoActivity" />
         <activity android:name=".ui.mediaplayer.CameraDemoActivity" />
         <activity android:name=".ui.mediaplayer.PhotoProcessDemoActivity" />
         <activity android:name=".ui.mediaplayer.AudioDemoActivity" />
-        <activity android:name=".ui.mvpdemo.view.MVPDemoActivity" />
+        <activity android:name=".ui.mvpdemo.view.MVPDemoActivity">
+            <intent-filter>
+                <data
+                    android:host="ground"
+                    android:path="/hao"
+                    android:port="8888"
+                    android:scheme="hlk" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.mvpdemo.view.MainSuccessActivity" />
+        <activity android:name=".ui.scheme.SchemeDemoActivity" />
+        <activity android:name=".ui.annotation.AnnotationDemoActivity"/>
         <activity
-            android:name=".ui.CallaperingDemoActivity"
+            android:name=".ui.uiview.CallaperingDemoActivity"
             android:theme="@style/colling" />
         <!--友盟-->
         <meta-data

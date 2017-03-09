@@ -14,7 +14,7 @@ import java.util.Random;
 
 import hlk.com.mystudyandroidtest.R;
 import hlk.com.mystudyandroidtest.base.MyApplication;
-import hlk.com.mystudyandroidtest.ui.RecyclerMoreItemActivity;
+import hlk.com.mystudyandroidtest.ui.recycler.RecyclerMoreItemActivity;
 
 /**
  * this recycler demo activity adapter

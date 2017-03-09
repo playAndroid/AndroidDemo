@@ -1,15 +1,17 @@
 package hlk.com.mystudyandroidtest.base;
 
-import hlk.com.mystudyandroidtest.ui.BroadcastDemoActivity;
-import hlk.com.mystudyandroidtest.ui.CustomerViewActivity;
-import hlk.com.mystudyandroidtest.ui.MediaPlayerDemoActivity;
-import hlk.com.mystudyandroidtest.ui.OkHttpDemoActivity;
-import hlk.com.mystudyandroidtest.ui.RecyclerDemoActivity;
-import hlk.com.mystudyandroidtest.ui.RetrofitDemoActivity;
-import hlk.com.mystudyandroidtest.ui.RxJavaAndRetrofitDemoActivity;
-import hlk.com.mystudyandroidtest.ui.RxJavaDemoActivity;
-import hlk.com.mystudyandroidtest.ui.ServiceDemoActivity;
+import hlk.com.mystudyandroidtest.ui.annotation.AnnotationDemoActivity;
+import hlk.com.mystudyandroidtest.ui.brodcast.BroadcastDemoActivity;
+import hlk.com.mystudyandroidtest.ui.mediaplayer.MediaPlayerDemoActivity;
 import hlk.com.mystudyandroidtest.ui.mvpdemo.view.MVPDemoActivity;
+import hlk.com.mystudyandroidtest.ui.okhttp.OkHttpDemoActivity;
+import hlk.com.mystudyandroidtest.ui.recycler.RecyclerDemoActivity;
+import hlk.com.mystudyandroidtest.ui.retrofit.RetrofitDemoActivity;
+import hlk.com.mystudyandroidtest.ui.rxjava.RxJavaAndRetrofitDemoActivity;
+import hlk.com.mystudyandroidtest.ui.rxjava.RxJavaDemoActivity;
+import hlk.com.mystudyandroidtest.ui.scheme.SchemeDemoActivity;
+import hlk.com.mystudyandroidtest.ui.service.ServiceDemoActivity;
+import hlk.com.mystudyandroidtest.ui.uiview.CustomerViewActivity;
 
 /**
  * Created by user on 2017/3/8.
@@ -49,6 +51,12 @@ public class MainProjectFactory {
                 break;
             case "MVP":
                 c = MVPDemoActivity.class;
+                break;
+            case "Scheme":
+                c = SchemeDemoActivity.class;
+                break;
+            case "注解":
+                c = AnnotationDemoActivity.class;
         }
 
         return c;

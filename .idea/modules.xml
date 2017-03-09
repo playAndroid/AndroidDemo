@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyStudyJavaTest.iml" filepath="$PROJECT_DIR$/MyStudyJavaTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/moduleone/moduleone.iml" filepath="$PROJECT_DIR$/moduleone/moduleone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myandroidlibrary/myandroidlibrary.iml" filepath="$PROJECT_DIR$/myandroidlibrary/myandroidlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/router/router.iml" filepath="$PROJECT_DIR$/router/router.iml" />
     </modules>
   </component>
 </project>

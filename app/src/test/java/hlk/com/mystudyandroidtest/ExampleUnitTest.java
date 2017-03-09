@@ -2,8 +2,6 @@ package hlk.com.mystudyandroidtest;
 
 import org.junit.Test;
 
-import hlk.com.mystudyandroidtest.net.okhttptest.HttpUtils;
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -15,7 +13,8 @@ public class ExampleUnitTest {
 //        assertEquals(5, 2 + 2);
 //        abc(8);
 //        bubbling();
-        HttpUtils.getAsyHttp();
+//        HttpUtils.getAsyHttp();
+
 
     }
 
