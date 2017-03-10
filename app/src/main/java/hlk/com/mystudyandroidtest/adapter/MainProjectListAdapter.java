@@ -25,7 +25,7 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
     private String[] main_list = {"RxJavaDemo", "RetrofitDemo", "RxJava&RetrofitDemo", "RecyclerDemo", "ActivityDemo"
             , "ServiceDemo", "Broadcast", "MediaPlayerDemo", "ActivityManager"
             , "FragmentDemo", "FrescoDemo", "OkHttpDemo", "WebViewDemo", "友盟统计", "多渠道打包", "代码混淆", "EventBus",
-            "otto", "IMDemo", "内存优化与监控", "自定义View","MVP","Scheme","注解"};
+            "otto", "IMDemo", "内存优化与监控", "自定义View","MVP","Scheme","注解","Socket"};
     private Context mContext = MyApplication.getContext();
 
     @Override

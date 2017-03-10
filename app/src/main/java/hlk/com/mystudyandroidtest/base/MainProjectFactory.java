@@ -11,6 +11,7 @@ import hlk.com.mystudyandroidtest.ui.rxjava.RxJavaAndRetrofitDemoActivity;
 import hlk.com.mystudyandroidtest.ui.rxjava.RxJavaDemoActivity;
 import hlk.com.mystudyandroidtest.ui.scheme.SchemeDemoActivity;
 import hlk.com.mystudyandroidtest.ui.service.ServiceDemoActivity;
+import hlk.com.mystudyandroidtest.ui.socketdemo.ClientActivity;
 import hlk.com.mystudyandroidtest.ui.uiview.CustomerViewActivity;
 
 /**
@@ -57,6 +58,9 @@ public class MainProjectFactory {
                 break;
             case "注解":
                 c = AnnotationDemoActivity.class;
+            case "Socket":
+                c = ClientActivity.class;
+                break;
         }
 
         return c;

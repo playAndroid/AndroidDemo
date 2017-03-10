@@ -59,6 +59,7 @@
         <activity android:name=".ui.mvpdemo.view.MainSuccessActivity" />
         <activity android:name=".ui.scheme.SchemeDemoActivity" />
         <activity android:name=".ui.annotation.AnnotationDemoActivity"/>
+        <activity android:name=".ui.socketdemo.ClientActivity"/>
         <activity
             android:name=".ui.uiview.CallaperingDemoActivity"
             android:theme="@style/colling" />
