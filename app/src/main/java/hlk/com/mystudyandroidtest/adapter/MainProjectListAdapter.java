@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import hlk.com.mystudyandroidtest.R;
+import hlk.com.mystudyandroidtest.base.CommonStrings;
 import hlk.com.mystudyandroidtest.base.MainProjectFactory;
 import hlk.com.mystudyandroidtest.base.MyApplication;
 
@@ -22,10 +23,6 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectListAdapter.ViewHolder> {
 
-    private String[] main_list = {"RxJavaDemo", "RetrofitDemo", "RxJava&RetrofitDemo", "RecyclerDemo", "ActivityDemo"
-            , "ServiceDemo", "Broadcast", "MediaPlayerDemo", "ActivityManager"
-            , "FragmentDemo", "FrescoDemo", "OkHttpDemo", "WebViewDemo", "友盟统计", "多渠道打包", "代码混淆", "EventBus",
-            "otto", "IMDemo", "内存优化与监控", "自定义View","MVP","Scheme","注解","Socket"};
     private Context mContext = MyApplication.getContext();
 
     @Override
@@ -40,11 +37,11 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jumpIntentActivity(MainProjectFactory.createMainProject(main_list[select]));
+                jumpIntentActivity(MainProjectFactory.createMainProject(CommonStrings.MAIN_LIST[select]));
             }
         });
 
-        holder.item_title.setText(main_list[position]);
+        holder.item_title.setText(CommonStrings.MAIN_LIST[position]);
     }
 
     private void jumpIntentActivity(Class aClass) {
@@ -57,7 +54,7 @@ public class MainProjectListAdapter extends RecyclerView.Adapter<MainProjectList
 
     @Override
     public int getItemCount() {
-        return main_list.length;
+        return CommonStrings.MAIN_LIST.length;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
