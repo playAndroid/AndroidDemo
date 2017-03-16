@@ -1,4 +1,4 @@
-package hlk.com.mystudyandroidtest.designmode;
+package hlk.com.mystudyandroidtest.designmode.singletonmode;
 
 /**
  * http://www.cnblogs.com/zuoxiaolong/p/pattern2.html

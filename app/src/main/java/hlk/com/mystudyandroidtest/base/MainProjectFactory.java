@@ -1,5 +1,6 @@
 package hlk.com.mystudyandroidtest.base;
 
+import hlk.com.mystudyandroidtest.ui.anmimationdemo.AnimationActivity;
 import hlk.com.mystudyandroidtest.ui.annotation.AnnotationDemoActivity;
 import hlk.com.mystudyandroidtest.ui.brodcast.BroadcastDemoActivity;
 import hlk.com.mystudyandroidtest.ui.mediaplayer.MediaPlayerDemoActivity;
@@ -60,6 +61,9 @@ public class MainProjectFactory {
                 c = AnnotationDemoActivity.class;
             case "Socket":
                 c = ClientActivity.class;
+                break;
+            case "动画":
+                c = AnimationActivity.class;
                 break;
         }
 

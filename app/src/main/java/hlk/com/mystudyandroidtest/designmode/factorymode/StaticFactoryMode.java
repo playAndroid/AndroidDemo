@@ -1,4 +1,4 @@
-package hlk.com.mystudyandroidtest.designmode;
+package hlk.com.mystudyandroidtest.designmode.factorymode;
 
 /**
  * static factory mode

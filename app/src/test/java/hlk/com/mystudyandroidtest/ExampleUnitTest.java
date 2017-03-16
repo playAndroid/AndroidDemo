@@ -1,6 +1,14 @@
 package hlk.com.mystudyandroidtest;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import hlk.com.mystudyandroidtest.designmode.observermode.test1.ConcreteObserverT;
+import hlk.com.mystudyandroidtest.designmode.observermode.test1.ConcreteObserverl;
+import hlk.com.mystudyandroidtest.designmode.observermode.test1.Observerable;
+import hlk.com.mystudyandroidtest.designmode.observermode.test2.Reader;
+import hlk.com.mystudyandroidtest.designmode.observermode.test2.Writer;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -10,11 +18,52 @@ import org.junit.Test;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-//        assertEquals(5, 2 + 2);
-//        abc(8);
-//        bubbling();
-//        HttpUtils.getAsyHttp();
 
+
+    }
+
+
+    @Test
+    public void testObserver2() {
+        Reader reader1 = new Reader("读者1");
+        Reader reader2 = new Reader("读者2");
+        Reader reader3 = new Reader("读者3");
+        Reader reader4 = new Reader("读者4");
+        Writer writer1 = new Writer("作者1");
+        Writer writer2 = new Writer("作者2");
+
+        reader1.subscribe(writer1.getName());
+        reader2.subscribe(writer1.getName());
+        reader3.subscribe(writer1.getName());
+        reader4.subscribe(writer1.getName());
+        reader1.subscribe(writer2.getName());
+        reader2.subscribe(writer2.getName());
+
+
+        writer1.addNovel("java设计");
+        writer2.addNovel("颈椎治疗");
+
+        reader2.unSubscribe(writer1.getName());
+
+        writer1.addNovel("新书来了啊");
+
+    }
+
+    @Test
+    public void testObserver1() {
+        Observerable observerable = new Observerable();
+        observerable.addObserver(new ConcreteObserverl());
+        observerable.addObserver(new ConcreteObserverT());
+        observerable.changed();
+    }
+
+    @Before
+    public void setUp() {
+
+    }
+
+    @After
+    public void after() {
 
     }
 
