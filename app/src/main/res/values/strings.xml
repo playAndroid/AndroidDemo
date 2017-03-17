@@ -5,4 +5,10 @@
     <string name="login">登陆</string>
     <string name="clear">清除</string>
     <string name="success">登陆成功:%1$s</string>
+
+
+
+    <string name="content">this is a card view,this is a card view,this is a card view,this is a card view
+    ,this is a card view,this is a card view,this is a card view,this is a card view
+    </string>
 </resources>

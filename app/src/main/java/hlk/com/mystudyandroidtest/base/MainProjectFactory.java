@@ -5,6 +5,7 @@ import hlk.com.mystudyandroidtest.ui.annotation.AnnotationDemoActivity;
 import hlk.com.mystudyandroidtest.ui.brodcast.BroadcastDemoActivity;
 import hlk.com.mystudyandroidtest.ui.mediaplayer.MediaPlayerDemoActivity;
 import hlk.com.mystudyandroidtest.ui.mvpdemo.view.MVPDemoActivity;
+import hlk.com.mystudyandroidtest.ui.newuimode.NewAnyUIActivity;
 import hlk.com.mystudyandroidtest.ui.okhttp.OkHttpDemoActivity;
 import hlk.com.mystudyandroidtest.ui.recycler.RecyclerDemoActivity;
 import hlk.com.mystudyandroidtest.ui.retrofit.RetrofitDemoActivity;
@@ -64,6 +65,9 @@ public class MainProjectFactory {
                 break;
             case "动画":
                 c = AnimationActivity.class;
+                break;
+            case "新控件":
+                c = NewAnyUIActivity.class;
                 break;
         }
 
