@@ -1,1 +1,1 @@
-include ':app', ':moduleone', ':myandroidlibrary', ':router'
+include ':app', ':moduleone', ':myandroidlibrary', ':router', ':mynetutismodule'
