@@ -3,8 +3,9 @@ package hlk.com.mystudyandroidtest.ui.recycler;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,10 +30,14 @@ public class RecyclerMoreItemActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        LinearLayoutManager manager = new LinearLayoutManager(this);
+//        LinearLayoutManager manager = new LinearLayoutManager(this);
+//        GridLayoutManager manager = new GridLayoutManager(this, 3);
+        StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecycler.setLayoutManager(manager);
         RecyclerMoreItemAdapter adapter = new RecyclerMoreItemAdapter();
         mRecycler.setAdapter(adapter);
+        mRecycler.setItemAnimator(new DefaultItemAnimator());
+//        mRecycler.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
     }
 
 }

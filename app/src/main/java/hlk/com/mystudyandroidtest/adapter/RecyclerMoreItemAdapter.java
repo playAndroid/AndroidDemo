@@ -53,6 +53,7 @@ public class RecyclerMoreItemAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         int viewType = getItemViewType(position);
+        final int pos = position;
         switch (viewType) {
             case 1:
                 ViewHolder1 viewHolder1 = (ViewHolder1) holder;
@@ -71,6 +72,15 @@ public class RecyclerMoreItemAdapter extends RecyclerView.Adapter<RecyclerView.V
                 viewHolder4.title.setText("类型4");
                 break;
         }
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                list.remove(pos);
+                notifyItemRemoved(pos);
+                return true;
+            }
+        });
     }
 
     @Override
