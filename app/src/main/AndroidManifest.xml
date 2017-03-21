@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -28,7 +27,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.recycler.RecyclerDemoActivity" />
-        <activity android:name=".ui.recycler.RecyclerMoreItemActivity" />
+        <activity
+            android:name=".ui.recycler.RecyclerMoreItemActivity"
+            android:theme="@style/AppTheme.NoAction" />
         <activity android:name=".ui.service.ServiceDemoActivity" />
         <activity android:name=".ui.customerview.SpeedIndexActivity" />
         <activity android:name=".ui.uiview.CustomerViewActivity" />
@@ -62,9 +63,9 @@
         <activity android:name=".ui.socketdemo.ClientActivity" />
         <activity android:name=".ui.anmimationdemo.AnimationActivity" />
         <!--新UI demo-->
-        <activity android:name=".ui.newuimode.NewAnyUIActivity"
-            android:theme="@style/AppTheme.NoAction"
-            />
+        <activity
+            android:name=".ui.newuimode.NewAnyUIActivity"
+            android:theme="@style/AppTheme.NoAction" />
         <activity
             android:name=".ui.uiview.CallaperingDemoActivity"
             android:theme="@style/colling" />

@@ -37,6 +37,9 @@ public class RecyclerDemoActivity extends AppCompatActivity {
     }
 
 
+
+
+
 //    public void repleaceFrame(Fragment fragment){
 //        FragmentManager manager = getSupportFragmentManager();
 //        FragmentTransaction transaction = manager.beginTransaction();
