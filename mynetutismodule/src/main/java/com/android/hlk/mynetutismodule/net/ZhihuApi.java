@@ -4,7 +4,7 @@ package com.android.hlk.mynetutismodule.net;
  * Created by user on 2017/3/20.
  */
 
-public class Api {
+public class ZhihuApi {
     // 所有的知乎日报API的HTTP METHOD 均为GET
     // the method of all zhihu daily's api is GET
 

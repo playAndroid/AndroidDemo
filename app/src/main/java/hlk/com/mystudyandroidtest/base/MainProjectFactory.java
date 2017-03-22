@@ -60,6 +60,7 @@ public class MainProjectFactory {
                 break;
             case "注解":
                 c = AnnotationDemoActivity.class;
+                break;
             case "Socket":
                 c = ClientActivity.class;
                 break;

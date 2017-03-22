@@ -8,26 +8,24 @@
     <Button
         android:id="@+id/btn_speed_index"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="快速索引"
         android:textSize="@dimen/item_title"
         android:textStyle="bold" />
 
     <Button
+        android:layout_marginTop="5dp"
         android:id="@+id/btn_collapsing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:text="折叠布局" />
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:layout_marginTop="5dp"
+        android:id="@+id/btn_viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColorLink="@color/cardview_light_background"
-        android:visibility="visible" />
+        android:text="ViewPager" />
 
 </LinearLayout>

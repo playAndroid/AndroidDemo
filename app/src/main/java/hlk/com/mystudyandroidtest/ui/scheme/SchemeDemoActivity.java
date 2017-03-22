@@ -43,11 +43,8 @@ public class SchemeDemoActivity extends BaseActivity {
         DisplayMetrics metrics = new DisplayMetrics();
         display.getMetrics(metrics);
 
-        Button button = (Button) findViewById(R.id.button1);
-        Button button2 = (Button) findViewById(R.id.button2);
-//        ViewGroup.LayoutParams layoutParams = button.getLayoutParams();
-        button.setWidth(metrics.widthPixels);
-        button2.setWidth(metrics.widthPixels);
+        Button button = (Button) findViewById(R.id.btn_1);
+        Button button2 = (Button) findViewById(R.id.btn_2);
         button.setText("跳转");
         button2.setText("跳转另一个app");
 

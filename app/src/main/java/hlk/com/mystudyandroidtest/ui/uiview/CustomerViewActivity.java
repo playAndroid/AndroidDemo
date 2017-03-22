@@ -21,6 +21,8 @@ public class CustomerViewActivity extends AppCompatActivity implements View.OnCl
     Button speedIndex;
     @BindView(R.id.btn_collapsing)
     Button btn_collapsing;
+    @BindView(R.id.btn_viewpager)
+    Button btn_viewpager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class CustomerViewActivity extends AppCompatActivity implements View.OnCl
     private void registerListener() {
         speedIndex.setOnClickListener(this);
         btn_collapsing.setOnClickListener(this);
+        btn_viewpager.setOnClickListener(this);
     }
 
 
@@ -46,6 +49,10 @@ public class CustomerViewActivity extends AppCompatActivity implements View.OnCl
             case R.id.btn_collapsing:
                 Intent intent1 = new Intent(this,CallaperingDemoActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.btn_viewpager:
+                Intent intent2 = new Intent(this,ViewPagerDemoActivity.class);
+                startActivity(intent2);
                 break;
         }
     }
