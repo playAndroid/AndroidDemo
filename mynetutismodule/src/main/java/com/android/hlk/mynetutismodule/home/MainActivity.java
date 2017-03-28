@@ -9,17 +9,15 @@ import android.widget.TextView;
 
 import com.android.hlk.mynetutismodule.R;
 import com.android.hlk.mynetutismodule.bean.GankApiRandomInfo;
+import com.android.hlk.mynetutismodule.bean.GankSearchInfo;
 import com.android.hlk.mynetutismodule.bean.MovieEntity;
 import com.android.hlk.mynetutismodule.net.GankServer;
 import com.android.hlk.mynetutismodule.net.MovieServer;
 import com.android.hlk.mynetutismodule.net.ServiceGenerator;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -45,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                getMoverData();
-                getGankData();
-
+//                getGankData();
+                getGankSearch();
             }
         });
     }
@@ -95,17 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void getGankData() {
 
-        OkHttpClient.Builder okhttp = new OkHttpClient.Builder();
-
-        Retrofit.Builder builder = new Retrofit.Builder();
-        builder.baseUrl("http://gank.io/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-
-        Retrofit retrofit = builder.client(okhttp.build()).build();
-        GankServer gankServer = retrofit.create(GankServer.class);
-        Call<GankApiRandomInfo> call = gankServer.getRandomData("Android","50");
+        GankServer gankServer = ServiceGenerator.createServier(GankServer.class);
+        Call<GankApiRandomInfo> call = gankServer.gankRandomData("Android", "50");
         call.enqueue(new Callback<GankApiRandomInfo>() {
             @Override
             public void onResponse(Call<GankApiRandomInfo> call, Response<GankApiRandomInfo> response) {
@@ -114,18 +103,40 @@ public class MainActivity extends AppCompatActivity {
 
                 StringBuilder sb = new StringBuilder();
                 for (int i = 0; i < body.getResults().size(); i++) {
-                    sb.append(body.getResults().get(i).getDesc()+"\n");
+                    sb.append(body.getResults().get(i).getDesc() + "\n");
                 }
-                title.setText(s+"\n"+sb.toString());
+                title.setText(s + "\n" + sb.toString());
             }
 
             @Override
             public void onFailure(Call<GankApiRandomInfo> call, Throwable throwable) {
-                title.setText("error"+throwable.getMessage());
-                Log.e("error",throwable.getMessage());
+                title.setText("error" + throwable.getMessage());
+                Log.e("error", throwable.getMessage());
             }
         });
+    }
 
 
+    public void getGankSearch(){
+        GankServer gankServer = ServiceGenerator.createServier(GankServer.class);
+        Call<GankSearchInfo> android = gankServer.gankSerachData("Android", 10, 1);
+        android.enqueue(new Callback<GankSearchInfo>() {
+            @Override
+            public void onResponse(Call<GankSearchInfo> call, Response<GankSearchInfo> response) {
+                GankSearchInfo body = response.body();
+                String s = response.toString();
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < body.getResults().size(); i++) {
+                    sb.append(body.getResults().get(i).getDesc() + "\n");
+                }
+                title.setText(s + "\n" + sb.toString());
+            }
+
+            @Override
+            public void onFailure(Call<GankSearchInfo> call, Throwable throwable) {
+
+            }
+        });
     }
 }

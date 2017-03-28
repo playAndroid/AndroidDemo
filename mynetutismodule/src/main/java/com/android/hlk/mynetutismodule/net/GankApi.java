@@ -50,7 +50,7 @@ public class GankApi {
      * http://gank.io/api/data/iOS/20/2
      * http://gank.io/api/data/all/20/2
      */
-    public static final String GANK_API_CLASSIFY = "ttp://gank.io/api/data/Android/10/1";
+    public static final String GANK_API_CLASSIFY = "http://gank.io/api/data/Android/10/1";
 
     /**
      * 每日数据： http://gank.io/api/day/年/月/日
